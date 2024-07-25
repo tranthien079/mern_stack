@@ -79,5 +79,8 @@ export const WrapperInputNumber = styled(InputNumber)`
         margin:0 4px;
         border-top: none;
         border-bottom: none;
+        height: 45px;
+        display: flex;
+        align-items: center;
     }
 `

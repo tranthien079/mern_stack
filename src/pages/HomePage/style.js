@@ -6,7 +6,6 @@ export const WapperTypeProduct = styled.div`
     align-items:center;
     gap: 24px;
     justify-content:center;
-    border-bottom: 1px solid red;
     height: 44px;
 `
 
@@ -24,8 +23,8 @@ export const WapperButtonMore = styled(ButtonComponent)`
 
 export const WapperProducts = styled.div`
     display:flex;
-    justify-content:center;
-    gap: 15px;
+    justify-content:space-around;
+    gap: 10px;
     margin-top: 20px;
     flex-wrap: wrap;
     width: 100%;

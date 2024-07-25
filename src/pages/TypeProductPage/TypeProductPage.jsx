@@ -6,7 +6,8 @@ import { Row, Pagination  } from 'antd'
 
 const TypeProductPage = () => {
   return (
-    <div style= {{ backgroundColor:'#efefef',padding: '0 120px ' }}>
+    <>
+      <div style= {{ backgroundColor:'#efefef',padding: '0 120px ' }}>
         <Row style={{ flexWrap: 'nowrap', paddingTop: '10px' }}>
         <WapperNavbar span={4} > 
             <NavbarComponent />
@@ -26,11 +27,25 @@ const TypeProductPage = () => {
             <CardComponent />
             <CardComponent />
             <CardComponent />
-
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
         </WapperProducts>
         </Row>
         <Pagination align="center" defaultCurrent={1} total={10} />
     </div>
+    </>
   )
 }
 
