@@ -2,7 +2,7 @@ import { Row } from 'antd';
 import { styled } from 'styled-components'
 
 export const WapperHeader = styled(Row)`
-    padding: 14px 120px;
+    padding: 10px 0px;
     background-color: rgb(26, 148, 255); 
     align-items: center;
     gap: 16px;
@@ -34,4 +34,12 @@ export const TextHeaderSmall =  styled.span`
 export const IconHeader =  styled.span`
     font-size:30px;
     color: #fff;
+`
+
+export const WrapperContentPopup = styled.p`
+    cursor: pointer;
+    &:hover {
+        background: rgb(26, 148, 255);
+        color: #fff;
+    }
 `

@@ -29,33 +29,38 @@ const SignUpPage = () => {
     setConfirmPassword(value)
   }
 
+  const handleNavigateSignIn = () => {
+    navigate('/sign-in');
+  };
+
   const mutation = useMutationHooks(
     data => UserService.signUpUser(data)
   )
 
   const { data, isPending, isSuccess, isError } = mutation
-  const handleNavigateSignIn = () => {
-    navigate('/sign-in');
+  useEffect(() => {
+    if (isSuccess && data?.status !== 'ERROR') {
+      message.success("Đăng ký thành công");
+      navigate('/sign-in');
+    } else if (isError) {
+      message.error("Đăng ký thất bại");
+    }
+  }, [isSuccess, isError, navigate, data?.status]);
+
+  const handleSignUp = () => {
+    // if (email && password && confirmPassword) {
+    //   if (password === confirmPassword) {
+        mutation.mutate({ email, password, confirmPassword });
+    //   } else {
+    //     message.error("Mật khẩu xác nhận không khớp");
+    //   }
+    // } else {
+    //   message.error("Vui lòng nhập đầy đủ thông tin");
+    // }
   };
 
-  useEffect(() => {
-    if(isSuccess) {
-      message.success("Đăng ký thành công");
-      handleNavigateSignIn()
-    }else if(isError) {
-      message.success("Đăng ký thất bại");
-    }
-  },[isSuccess, isError])
-  const handleSignUp = () => {
-    mutation.mutate({
-      email, password, confirmPassword
-    })
-
-  }
-
-
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#f5f5f5', fontFamily: 'Roboto,Arial,sans-serif' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#f5f5f5' }}>
       <div style={{ width: '800px', height: '430px', borderRadius: '6px', backgroundColor: '#fff', fontSize: '15px' }}>
         <WrapperContainer>
           <WrapperContainerRight>
